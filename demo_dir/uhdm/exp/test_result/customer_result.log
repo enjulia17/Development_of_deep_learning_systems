@@ -1,0 +1,4 @@
+2024-04-03 16:48:00.126431
+load model from .//pretrain_model//uhdm_large_checkpoint.pth
+save image results to .//demo_dir//uhdm\exp\test_result/customer
+save logger to .//demo_dir//uhdm\exp\test_result/customer_result.log
