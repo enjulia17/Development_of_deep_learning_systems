@@ -4,7 +4,7 @@ GENERAL:
   SEED: 123
   WORKER: 6
   SAVE_PREFIX: './/demo_dir//uhdm'
-  EXP_NAME: 'exp_2'
+  EXP_NAME: 'exp_3'
 
 DATA:
   DEMO_DATASET: E://deep_learning_esdnet//moire_images # Insert the root of your moire images
