@@ -111,7 +111,7 @@ def test_model_fn(args, data, model, save_path, device):
         h_odd_pad += 1
 
     in_img = img_pad(in_img, w_pad=w_pad, h_pad=h_pad, w_odd_pad=w_odd_pad, h_odd_pad=h_odd_pad)
-
+    print('DEBUG: IMAGE PADDED')
     with torch.no_grad():
         out_1, out_2, out_3 = model(in_img)
         if h_pad != 0:
