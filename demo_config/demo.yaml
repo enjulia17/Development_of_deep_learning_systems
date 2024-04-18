@@ -3,11 +3,12 @@ GENERAL:
   GPU_ID: 2
   SEED: 123
   WORKER: 6
-  SAVE_PREFIX: './/demo_dir//uhdm'
-  EXP_NAME: 'exp_3'
+  SAVE_PREFIX: './/test_output_data'
+  EXP_NAME: 'experiment'
 
 DATA:
-  DEMO_DATASET: E://deep_learning_esdnet//moire_images # Insert the root of your moire images
+  DEMO_DATASET: .//test_input_data # Insert the root of your moire images
+  LABEL: .//test_label_data//label.jpeg
 
 MODEL:
   EN_FEATURE_NUM: 48

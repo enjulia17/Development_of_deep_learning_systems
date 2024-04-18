@@ -2,3 +2,4 @@
 .venv/
 .vscode/
 demo_dir
+test_output_data

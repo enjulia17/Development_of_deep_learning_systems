@@ -119,11 +119,19 @@ def test_model_fn(args, data, model, save_path, device):
         if w_pad != 0:
             out_1 = out_1[:, :, :, w_pad:-w_odd_pad]
 
+    # compare with label
+    label = Image.open(args.LABEL).convert('RGB')
+    label = default_toTensor(label)
+    psnr = -10*torch.log10(torch.mean((label-out_1)**2))
+    print("\n"+55*"=")
+    print(f"\n PSNR metric = {psnr} \n")
+    print(55*"=")
+    if psnr > 16:
+        print("\n TEST PASSED! \n")
+
     # save images
     if args.SAVE_IMG:
         out_save = out_1.detach().cpu()
-        torchvision.utils.save_image(torchvision.transforms.functional.rotate(out_save, 270), save_path + '/' + 'test_%s' % number[0] + '.%s' % args.SAVE_IMG)
-
 def create_demo_dataset(
     args,
     data_path,
