@@ -111,6 +111,7 @@ def test_model_fn(args, data, model, save_path, device):
         h_odd_pad += 1
 
     in_img = img_pad(in_img, w_pad=w_pad, h_pad=h_pad, w_odd_pad=w_odd_pad, h_odd_pad=h_odd_pad)
+
     with torch.no_grad():
         out_1, out_2, out_3 = model(in_img)
         if h_pad != 0:
@@ -125,12 +126,16 @@ def test_model_fn(args, data, model, save_path, device):
     print("\n"+55*"=")
     print(f"\n PSNR metric = {psnr} \n")
     print(55*"=")
-    if psnr > 16:
+    if psnr > 18:
         print("\n TEST PASSED! \n")
+    else:
+        print("\n TEST NOT PASSED! \n")
 
     # save images
     if args.SAVE_IMG:
         out_save = out_1.detach().cpu()
+        torchvision.utils.save_image(torchvision.transforms.functional.rotate(out_save, 270), save_path + '/' + 'test_%s' % number[0] + '.%s' % args.SAVE_IMG)
+
 def create_demo_dataset(
     args,
     data_path,
