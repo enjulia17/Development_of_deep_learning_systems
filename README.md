@@ -9,11 +9,11 @@ git clone https://github.com/enjulia17/Development_of_deep_learning_systems.git
 ```shell script
 cd Development_of_deep_learning_systems 
 ```
-4. Build docker:
+3. Build docker:
 ```shell script
 docker build -t esdnet .
 ```
-6. Run docker:
+4. Run docker:
 ```shell script
 docker run -v ./:/app --shm-size 20G esdnet
 ```
