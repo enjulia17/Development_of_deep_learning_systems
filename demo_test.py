@@ -126,7 +126,7 @@ def test_model_fn(args, data, model, save_path, device):
     print("\n"+55*"=")
     print(f"\n PSNR metric = {psnr} \n")
     print(55*"=")
-    if psnr > 18:
+    if psnr > 40:
         print("\n TEST PASSED! \n")
     else:
         print("\n TEST NOT PASSED! \n")
