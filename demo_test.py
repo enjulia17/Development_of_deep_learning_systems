@@ -134,7 +134,7 @@ def test_model_fn(args, data, model, save_path, device):
     # save images
     if args.SAVE_IMG:
         out_save = out_1.detach().cpu()
-        torchvision.utils.save_image(torchvision.transforms.functional.rotate(out_save, 270), save_path + '/' + 'test_%s' % number[0] + '.%s' % args.SAVE_IMG)
+        torchvision.utils.save_image(torchvision.transforms.functional.hflip(torch.permute(out_save, (0, 1, 3, 2))), save_path + '/' + 'test_%s' % number[0] + '.%s' % args.SAVE_IMG)
 
 def create_demo_dataset(
     args,
